@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oNews</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="home">
+    <header id="welcome">
+        <h1 id="logo">
+            <a href="index.html">O'clock Students News</a>
+        </h1>
+        <div id="welcome-message">
+            <h2>Latest news <span>from our students</span></h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint aliquam accusamus voluptatibus nesciunt repellat consectetur asperiores impedit necessitatibus ut magnam dignissimos saepe quaerat, labore aperiam recusandae ex odit dolores porro.</p>
+        </div>
+        <nav id="menu" class="mobile-hidden">
+            <a href="sitemap.html">Plan du site</a>
+            <a href="mentions.html">Mentions légales</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main id="content">
+        <h2>Latest news</h2>
+        <!-- Emmet : article.post>a.badge+h3.post-title+(div.meta>img.meta-avatar+strong.meta-author+time.meta-date)+p.post-excerpt+a.post-read{Continue reading} -->
+        <article class="post post-news">
+            <a href="#" class="badge">News</a>
+            <h3 class="post-title">Lorem ipsum dolor sit amet</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-john.png" alt="" class="meta-avatar"><strong class="meta-name">John Marchill</strong></a>
+                <time class="meta-date">le 21 Juillet 2019</time>
+            </div>
+            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque suscipit nibh quis porttitor. Voilà, je tenais à le dire.</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+        <article class="post post-team">
+            <a href="#" class="badge">Team</a>
+            <h3 class="post-title">Le pair programming pour les n00bs</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-dar.png" alt="" class="meta-avatar"><strong class="meta-name">Paul Darson</strong></a>
+                <time class="meta-date">le 2 Août 2019</time>
+            </div>
+            <p class="post-excerpt">Le pair programming pour les dévs, c'est un peu comme certains fromages : c'est mieux à deux.</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+        <article class="post post-work">
+            <a href="#" class="badge badge-work">Work</a>
+            <h3 class="post-title">Pourquoi j'aime JS</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-ohz.png" alt="" class="meta-avatar"><strong class="meta-name">Bruce Ékoute</strong></a>
+                <time class="meta-date">le 7 Août 2019</time>
+            </div>
+            <p class="post-excerpt">JavaScript est un langage très particulier, c'est indéniable. Je vous propose de faire le tour de toutes ces petites choses simples qui lui donnent une saveur si unique.</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+        <article class="post post-team">
+            <a href="#" class="badge">Team</a>
+            <h3 class="post-title">La situation de scribe</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-spr.png" alt="" class="meta-avatar"><strong class="meta-name">Otis</strong></a>
+                <time class="meta-date">le 5 Septembre 2019</time>
+            </div>
+            <p class="post-excerpt">Mais, vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres, des gens qui m'ont tendu la main, peut-être à un moment où je ne pouvais pas, où j'étais seul chez moi. Et c'est assez curieux de se dire que les hasards, les rencontres forgent une destinée...</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+        <article class="post post-work">
+            <a href="#" class="badge">Work</a>
+            <h3 class="post-title">Le travail : pourquoi ce n'est jamais naturel ?</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-tr.png" alt="" class="meta-avatar"><strong class="meta-name">Trouveur d'Éperon de Wyverne</strong></a>
+                <time class="meta-date">le 6 Septembre 2019</time>
+            </div>
+            <p class="post-excerpt">Le terme "travail" vient du latin "trepalium" qui signifie "torture". Voilà, je vous laisse avec ça.</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+        <article class="post post-news">
+            <a href="#" class="badge">News</a>
+            <h3 class="post-title">Les chats augmentent la longévité</h3>
+            <div class="meta">
+                <a href="#" class="meta-author"><img src="../ressources/images/icon-tre.png" alt="" class="meta-avatar"><strong class="meta-name">Rincevent</strong></a>
+                <time class="meta-date">le 27 Septembre 2019</time>
+            </div>
+            <p class="post-excerpt">Jusqu'à un certain nombre. Au delà de 28 chats, les scientifiques semblent quelque peu sceptiques. Surtout sur l'aspect budgétaire...</p>
+            <a href="#" class="post-read">Continue reading</a>
+        </article>
+    </main>
+    <footer class="footer mobile-visible">
+        <!-- pas besoin de la nav en fait ;-) ce qui compte, c'est les 3 liens -->
+        <!-- et au niveau sémantique, on est raccord : ceci n'est pas une nav (c'est juste une technique pour avoir mes liens où je veux sur mobile, parce que je mets des liens où je veux d'abord) -->
+        <a href="sitemap.html">Plan du site</a>
+        <a href="mentions.html">Mentions légales</a>
+        <a href="contact.html">Contact</a>
+    </footer>
+</body>
+</html>

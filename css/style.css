@@ -1,0 +1,287 @@
+/* généralités */
+
+body {
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+    display: flex; /* je ne sais pas exactement pourquoi mais sans le flex, il y a un petit défilement horizontal */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+
+#welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 50vw;
+    height: 100vh;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#home #welcome {
+    background-image: url(../ressources/images/nicole.jpg);
+}
+
+#contact #welcome {
+    background-image: url(../ressources/images/gabriel.jpg);
+}
+
+/* factorisation du code : plutôt que de définir à plusieurs endroits les mêmes propriétés, on "élargit" le sélecteur et on écrit une seule fois nos instructions */
+#welcome a, #welcome a:visited {
+    color: inherit; /* valeur héritée de celle du parent */
+}
+
+#logo {
+    text-transform: uppercase;
+    width: 10rem; /* ici, on a pas directement défini la font-size de l'élément et, du coup, 1em représente une taille floue, inconnue */
+    padding-left: 3rem;
+    background-image: url(../ressources/images/onews.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 0 5px;
+}
+
+#welcome-message {
+    text-align: right;
+    text-shadow: 0 0 4px #333;
+}
+
+#home #welcome-message {
+    padding: 1em 4% 1em 16%;
+    background-color: rgba(155, 155, 155, .3);
+}
+
+#welcome-message h2 span {
+    font-size: .5em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#menu {
+    text-align: right;
+    text-shadow: 0 0 4px #333;
+}
+
+#menu a {
+    margin-left: 2em;
+}
+
+/* main */
+
+#content {
+    margin-left: 50vw;
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content > h2 {
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.post {
+    width: 50%;
+    border: 1px solid #eaeaea;
+    padding: 2em;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.badge {
+    text-transform: uppercase;
+    color: white;
+    padding: .3em .5em;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: #999; /* si aucun autre style plus précis ne s'applique, au moins le badge aura une couleur de fond */
+    text-decoration: none;
+    font-size: .8em;
+}
+
+.post-team .badge {
+    background-color: #98dc62;
+}
+
+.post-news .badge {
+    background-color: #dc5e53;
+}
+
+.post-work .badge {
+    background-color: #0766f0;
+}
+
+.post-title, .meta {
+    margin: 1em 0;
+}
+
+.meta {
+    font-size: .8em;
+}
+
+.meta-author {
+    color: inherit;
+}
+
+.meta-avatar {
+    width: 2em;
+    margin-right: .8em;
+    vertical-align: middle;
+}
+
+.meta-date {
+    color: #999;
+}
+
+.post-excerpt {
+    line-height: 1.5em;
+    font-size: .9em;
+}
+
+.post-read {
+    font-size: .9em;
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.post-read:hover {
+    color: #0056b3;
+}
+
+/* formulaire */
+
+/* le formulaire en lui-même */
+#contact-form {
+    width: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+/* les groupements de champs */
+#contact-form fieldset {
+    /* on retire la bordure par défaut */
+    border: none;
+    border-left: 1px solid #4cced3;
+    padding: .5em 1em 0;
+    margin-bottom: 2em;
+}
+
+
+#contact-form legend {
+    margin-left: -.3em;
+    font-size: 1.1em;
+}
+
+.form-row {
+    display: flex; /* simple et tellement efficace */
+    margin-bottom: .4em;
+}
+
+/* ce sélecteur est plus spécifique que celui d'en dessous, car il cible une classe .label particulière tandis que le sélecteur suivant cible n'importe quel élément (*) */
+.form-row .label {
+    /* donc c'est ce flex-basis qui s'appliquera pour les .label */
+    flex-basis: 30%;
+    margin: 0;
+    padding-right: 3%;
+}
+
+/* l'écriture > * signifie tout élément (*) enfant direct (>) d'une div class="form-row" */
+.form-row > * {
+    flex-basis: 70%;
+}
+
+/* pure coquetterie : j'utilise flex pour que tous les éléments soient parfaitement alignés verticalement) */
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+/* et chaque élément aura une petite marge à droite */
+.input-group > * {
+    margin: 0 .5em 0 0;
+}
+
+/* moche mais ça marche : pour caler ma checkbox à gauche, je lui donne une flex-basis très basse et le reste de la place est perdu */
+#info {
+    flex-basis: 1em;
+}
+
+/* petit combo de classes pour cacher et afficher des contenus spécifiques sur mobile */
+.mobile-visible {
+    display: none;
+}
+
+.mobile-hidden {
+    display: block;
+}
+
+/* NB : on pourrait faire exactement la même chose pour tablette ou autre support, le principe reste le même */
+
+/* ce qui s'applique pour les petites largeurs (mobile et tablette) */
+@media (max-width: 1024px) {
+    .post {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #welcome {
+        width: 100vw;
+        height: auto;
+        position: static;
+    }
+
+    #content {
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    #welcome-message, .menu, #content h2 {
+        display: none;
+    }
+
+    .post {
+        padding: .7em;
+    }
+
+    .post-excerpt {
+        text-align: justify;
+    }
+
+    /* et du coup, sur mobile, le "visible" est en d:block, le "hidden" est en d:none */
+    .mobile-visible {
+        display: block;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    /* et je modifie ce que je veux pour que ça s'affiche comme je le souhaite, comme n'importe quelle autre feuille de style */
+    .footer {
+        text-align: center;
+        background-color: #777;
+        padding: .5em 1em;
+    }
+
+    .footer a {
+        color: white;
+        margin: 0 .3em;
+    }
+}

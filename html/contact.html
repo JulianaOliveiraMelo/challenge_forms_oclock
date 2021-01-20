@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oNews - contact</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="contact">
+    <header id="welcome">
+        <h1 id="logo">
+            <a href="index.html">O'clock Students News</a>
+        </h1>
+        <div id="welcome-message">
+            <h2>Latest news <span>from our students</span></h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint aliquam accusamus voluptatibus nesciunt repellat consectetur asperiores impedit necessitatibus ut magnam dignissimos saepe quaerat, labore aperiam recusandae ex odit dolores porro.</p>
+        </div>
+        <nav id="menu">
+            <a href="sitemap.html">Plan du site</a>
+            <a href="mentions.html">Mentions légales</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main id="content">
+        <h2>Contact</h2>
+        <!-- un formulaire peut plus ou moins être résumé à une seule balise : form -->
+        <!-- toutes les infos saisies dans des champs enfants de ce formulaire seront envoyées -->
+        <!-- et toutes les infos saisies dans des champs en dehors de ce formulaire... ne seront pas envoyées :-) -->
+        <form action="" id="contact-form">
+            <!-- fieldset sert à regrouper des champs d'un point de vue sémantique -->
+            <!-- par défaut, ces éléments ont une présentation CSS un peu particulière, ils ont une fine bordure... -->
+            <fieldset>
+                <!-- et s'ils ont un élément legend en guise de premier enfant, cet élément vient se placer sur la bordure pour un effet so 90 -->
+                <legend>Identité</legend>
+                <!-- une class pour représenter une ligne de formulaire (comme elles se ressemblent toutes) -->
+                <div class="form-row">
+                    <!-- ici pas le choix, avec des boutons radio, il faut un label par bouton, donc le petit libellé de gauche ne peut pas être un label -->
+                    <!-- par contre avec une class label, on peut donner exactement le même comportement à cette partie de gauche, qu'il s'agisse d'un élément label ou de n'importe quoi d'autre (ici, un p) -->
+                    <p class="label">Je suis</p>
+                    <!-- et comme dans les autres lignes, on compte sur la présence de 2 et seulement 2 éléments enfants d'une .form-row, là encore on est obligés de tout regrouper dans une div -->
+                    <!-- mais rappelez-vous, les div sont monnaire courante dans les forms : seul le rendu compte ;-) -->
+                    <div class="input-group">
+                        <!-- l'attribut checked permet de précocher un bouton radio ou checkbox -->
+                        <input type="radio" id="civilite-2" name="civilite" value="2" checked>
+                        <label for="civilite-2">une femme</label>
+                        <span>/</span>
+                        <input type="radio" id="civilite-1" name="civilite" value="1">
+                        <label  for="civilite-1">un homme</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- dans toutes les lignes suivantes, combo label + champ -->
+                    <!-- pensez bien à faire correspondre le for d'un label avec l'id de son input -->
+                    <label class="label" for="prenom">Mon prénom est </label>
+                    <input type="text" id="prenom" placeholder="Prenom" required>
+                    </div>
+                <div class="form-row">
+                    <!-- une fois qu'on s'est embêtés à déterminer le fonctionnement CSS d'une ligne de formulaire, on applique le principe à toutes les lignes ! -->
+                    <label class="label" for="nom">Et mon nom, </label>
+                    <input type="text" id="nom" placeholder="Nom">
+                </div>
+                <div class="form-row">
+                    <label class="label" for="source">J'ai connu ce site grâce à </label>
+                    <!-- permet de sélectionner un choix parmi une (parfois très longue) liste -->
+                    <!-- quand la liste de choix est assez courte, vous pouvez aussi partir sur une série de boutons radio -->
+                    <!-- pour choisir sélectionner son département de résidence par exemple :-D mieux vaut éviter la déferlante de boutons radio -->
+                    <select id="source" name="source">
+                        <!-- dans un select, la première option est celle qui est sélectionnée par défaut -->
+                        <option value="">choisir</option>
+                        <option value="fb">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="google">Google</option>
+                        <option value="bouche-a-oreilles">Bouche à oreilles</option>
+                        <option value="jpp">JT de 13h de Jean-Pierre Pernault</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Message</legend>
+                <div class="form-row">
+                    <label class="label" for="email">Répondez-moi via</label>
+                    <!-- les types email, tel et autres peuvent sembler inutiles car ils sont en apparence identiques à text, sauf que le navigateur vérifiera que vous avez bien tapé une adresse email ou un numéro de téléphone, et ça c'est chouette -->
+                    <input type="email" id="email" placeholder="Adresse e-mail">
+                </div>
+                <div class="form-row">
+                    <label class="label" for="message">Je voulais vous dire que</label>
+                    <!-- texte multiligne -->
+                    <textarea id="message" placeholder="Votre message"></textarea>
+                </div>
+                <div class="form-row">
+                    <label class="label" for="file">Et vous montrer ça aussi</label>
+                    <!-- le type file est un peu particulier, on ne peut pas le modifier complètement via CSS -->
+                    <input type="file" id="file">
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-row">
+                    <label class="label" for="info">Je certifie la véracité de ces informations.</label>
+                    <!-- l'attribut required permet de s'assurer que l'utilisateur n'enverra pas le formulaire sans avoir coché cette case -->
+                    <input id="info" type="checkbox" name="info" value="1" required>
+                </div>
+            </fieldset>
+            <!-- pour envoyer le formulaire, à la fin -->
+            <input id="submit-form" type="submit" value="Envoyer">
+        </form>
+    </main>
+</body>
+</html>
